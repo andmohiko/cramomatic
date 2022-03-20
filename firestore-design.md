@@ -4,7 +4,6 @@
   - [buyings](#buyings)
 - [shops](#shops)
 - [users](#users)
-  - [favorites](#favorites)
 
 ## cards
 

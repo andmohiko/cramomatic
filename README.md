@@ -1,12 +1,19 @@
 # pokeca.trade
 
-## Links
+## リンク集
 
 Github
 https://github.com/andmohiko/cramomatic
 
 Firebase
 https://console.firebase.google.com/u/1/project/cramomatic/overview
+
+## 開発環境
+
+- Next.js + Typescript
+- Firebase Auth(Twitter認証)
+- Firestore
+- Cloud Functions
 
 ## Getting Started
 

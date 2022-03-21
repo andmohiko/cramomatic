@@ -13,7 +13,7 @@ const Search: NextPage = () => {
           top: 0,
           zIndex: 1,
           backgroundColor: "white",
-          p: 1,
+          py: 1,
         }}
       >
         <TextField

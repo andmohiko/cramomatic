@@ -14,6 +14,11 @@
     "lintjs:prettier": "prettier --ignore-path .gitignore --ignore-path .eslintignore --loglevel warn \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.1",
+    "@mui/system": "^5.5.1",
     "firebase": "^9.6.9",
     "next": "12.1.0",
     "react": "17.0.2",

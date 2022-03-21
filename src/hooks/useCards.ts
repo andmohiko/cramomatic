@@ -5,8 +5,7 @@ import {
   query,
   orderBy,
   Firestore,
-  DocumentData,
-  Timestamp
+  DocumentData
 } from "firebase/firestore";
 import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { Card, CardId } from "../entities";

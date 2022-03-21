@@ -11,8 +11,7 @@
     "lintjs": "run-s lintjs:* \"lintjs:prettier --check\"",
     "lintjs:fix": "run-s \"lintjs:eslint --fix\" \"lintjs:prettier --write\"",
     "lintjs:eslint": "eslint --ext js,jsx,ts,tsx --ignore-path .gitignore --ignore-path .eslintignore .",
-    "lintjs:prettier": "prettier --ignore-path .gitignore --ignore-path .eslintignore --loglevel warn \"**/*.{js,jsx,ts,tsx}\"",
-    "lintcss:fix": "stylelint --fix 'src/**/*.css'"
+    "lintjs:prettier": "prettier --ignore-path .gitignore --ignore-path .eslintignore --loglevel warn \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "firebase": "^9.6.9",
@@ -31,12 +30,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss-custom-media": "^8.0.0",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-import": "^14.0.2",
-    "postcss-preset-env": "^7.4.3",
     "prettier": "^2.6.0",
-    "typescript": "4.6.2",
-    "typescript-plugin-css-modules": "^3.4.0"
+    "typescript": "4.6.2"
   }
 }

@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" sx={{ py: 4 }}>
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>

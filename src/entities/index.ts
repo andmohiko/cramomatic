@@ -1,4 +1,4 @@
-export type Uid = String;
+export type Uid = string
 
 export type UserId = Uid;
 

@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
 import {
   collection,
+  doc,
   query,
   orderBy,
   Firestore,
   DocumentData,
+  Timestamp
 } from "firebase/firestore";
-import { useCollection } from "react-firebase-hooks/firestore";
-import { Card } from "../entities";
+import { useCollection, useDocument } from "react-firebase-hooks/firestore";
+import { Card, CardId } from "../entities";
 import { isDefined } from "../utils/type";
 import { convertDate } from "../utils/date";
 
 const CardsCollection = "cards";
 
-export const useCards = (db: Firestore) => {
+export const useFetchAllCards = (db: Firestore) => {
   const [cards, setCards] = useState<Card[]>([]);
   const [value] = useCollection(
     query(collection(db, CardsCollection), orderBy("name"))
@@ -32,21 +34,31 @@ export const useCards = (db: Firestore) => {
   return cards;
 };
 
+export const useFetchCardById = (db: Firestore, cardId: CardId) => {
+  const [card, setCard] = useState<Card>()
+  const [value, loading, error] = useDocument(doc(db, CardsCollection, cardId))
+
+  useEffect(() => {
+    if (!value) return
+    setCard(cardFactory(value))
+  }, [value])
+
+  return card
+}
+
 const cardFactory = (doc: DocumentData): Card | undefined => {
-  const card = doc.data();
-  if (!card) {
-    return;
-  }
+  const data = doc.data();
+  if (!data) return;
 
   return {
     cardId: doc.id,
-    buyingPrice: card.buyingPrice,
-    cardImageUrl: card.cardImageUrl,
-    createdAt: convertDate(card.createdAt),
-    name: card.name,
-    rarity: card.rarity,
-    regulation: card.regulation,
-    updatedAt: convertDate(card.updatedAt),
-    version: card.version,
-  };
-};
+    buyingPrice: data.buyingPrice,
+    cardImageUrl: data.cardImageUrl,
+    createdAt: convertDate(data.createdAt),
+    name: data.name,
+    rarity: data.rarity,
+    regulation: data.regulation,
+    updatedAt: convertDate(data.updatedAt),
+    version: data.version,
+  }
+}

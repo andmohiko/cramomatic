@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       </Typography>
       <Grid container direction="column" alignItems="center" sx={{ py: 5 }}>
         <Button variant="contained">
-          <TwitterIcon sx={{ mr: 2, marginX: "auto" }} />
+          <TwitterIcon sx={{ mr: 2 }} />
           Twitterでログイン
         </Button>
       </Grid>

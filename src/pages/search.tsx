@@ -23,7 +23,7 @@ const Search: NextPage = () => {
           fullWidth
         />
       </Box>
-      <ImageList cols={3}>
+      <ImageList cols={3} rowHeight={250}>
         {new Array(30).fill(null).map((item, index) => (
           <ImageListItem key={index}>
             <img src={`https://picsum.photos/300/300`} alt="" />

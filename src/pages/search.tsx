@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
@@ -6,12 +7,22 @@ import ImageListItem from "@mui/material/ImageListItem";
 const Search: NextPage = () => {
   return (
     <div>
-      <TextField
-        id="outlined-basic"
-        label="Outlined"
-        variant="outlined"
-        fullWidth
-      />
+      <Box
+        sx={{
+          position: "sticky",
+          top: 0,
+          zIndex: 1,
+          backgroundColor: "white",
+          p: 1,
+        }}
+      >
+        <TextField
+          id="outlined-basic"
+          label="Outlined"
+          variant="outlined"
+          fullWidth
+        />
+      </Box>
       <ImageList cols={3}>
         {new Array(30).fill(null).map((item, index) => (
           <ImageListItem key={index}>

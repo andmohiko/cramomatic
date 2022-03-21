@@ -1,6 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, TwitterAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithPopup, TwitterAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const config = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -21,11 +21,11 @@ export const Login = () => {
   const provider = new TwitterAuthProvider();
   signInWithPopup(auth, provider)
     .then((result: any) => {
-      console.log('login res', result.user.uid);
+      console.log("login res", result.user.uid);
       return result;
     })
     .catch(function (error) {
-      console.log('error', error);
+      console.log("error", error);
     });
 };
 

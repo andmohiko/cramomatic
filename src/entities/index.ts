@@ -17,8 +17,8 @@ export type BuyingPrice = {
 };
 
 export enum Rarity {
-  Common = 'common',
-  Rare = 'rare',
+  Common = "common",
+  Rare = "rare",
 }
 
 export interface Card {

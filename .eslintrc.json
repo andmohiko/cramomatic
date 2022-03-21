@@ -6,20 +6,7 @@
       "files": ["**/*.ts", "**/*.tsx"],
       "rules": {
         "react/prop-types": "off",
-        "@typescript-eslint/no-unused-vars": ["error"],
-        "prettier/prettier": [
-          "error",
-          {
-            "printWidth": 120,
-            "tabWidth": 2,
-            "useTabs": false,
-            "semi": true,
-            "singleQuote": true,
-            "trailingComma": "all",
-            "bracketSpacing": true,
-            "arrowParens": "always"
-          }
-        ]
+        "@typescript-eslint/no-unused-vars": ["error"]
       },
       "parser": "@typescript-eslint/parser",
       "settings": { "react": { "version": "detect" } },

@@ -1,15 +1,23 @@
-import { useState, useEffect } from 'react';
-import { collection, query, orderBy, Firestore, DocumentData, Timestamp } from 'firebase/firestore';
-import { useCollection } from 'react-firebase-hooks/firestore';
-import { Card } from '../entities';
-import { isDefined } from '../utils/type';
-import { convertDate } from '../utils/date';
+import { useState, useEffect } from "react";
+import {
+  collection,
+  query,
+  orderBy,
+  Firestore,
+  DocumentData,
+} from "firebase/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { Card } from "../entities";
+import { isDefined } from "../utils/type";
+import { convertDate } from "../utils/date";
 
-const CardsCollection = 'cards';
+const CardsCollection = "cards";
 
 export const useCards = (db: Firestore) => {
   const [cards, setCards] = useState<Card[]>([]);
-  const [value, loading, error] = useCollection(query(collection(db, CardsCollection), orderBy('name')));
+  const [value] = useCollection(
+    query(collection(db, CardsCollection), orderBy("name"))
+  );
 
   useEffect(() => {
     if (!value) return;

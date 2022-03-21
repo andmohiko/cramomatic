@@ -12,7 +12,6 @@ const Home: NextPage = () => {
       <Typography variant="h2" component="h1">
         ポケカ買取価格比較
       </Typography>
-      ;
       <Grid container direction="column" alignItems="center" sx={{ py: 5 }}>
         <Button variant="contained">
           <TwitterIcon sx={{ mr: 2, marginX: "auto" }} />

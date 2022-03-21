@@ -1,11 +1,11 @@
-import { Timestamp } from '@firebase/firestore'
+import { Timestamp } from "@firebase/firestore";
 
 export const convertDate = (timestamp: Timestamp): Date => {
   if (!timestamp) {
-    return new Date(0)
+    return new Date(0);
   }
-  return new Date(timestamp.seconds * 1000)
-}
+  return new Date(timestamp.seconds * 1000);
+};
 
 // /**
 //  * firebaseのtimestamp型をDate型に変換する

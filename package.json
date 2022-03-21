@@ -6,9 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type:fix": "cross-env NODE_OPTIONS=\"-r tsconfig-paths/register --max_old_space_size=8192\" && next build",
+    "lintjs": "run-s lintjs:* \"lintjs:prettier --check\"",
+    "lintjs:fix": "run-s \"lintjs:eslint --fix\" \"lintjs:prettier --write\"",
+    "lintjs:eslint": "eslint --ext js,jsx,ts,tsx --ignore-path .gitignore --ignore-path .eslintignore .",
+    "lintjs:prettier": "prettier --ignore-path .gitignore --ignore-path .eslintignore --loglevel warn \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.1",
+    "@mui/system": "^5.5.1",
     "firebase": "^9.6.9",
     "next": "12.1.0",
     "react": "17.0.2",
@@ -18,8 +28,14 @@
   "devDependencies": {
     "@types/node": "17.0.21",
     "@types/react": "17.0.41",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.6.0",
     "typescript": "4.6.2"
   }
 }
